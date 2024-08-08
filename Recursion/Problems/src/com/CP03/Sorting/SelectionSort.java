@@ -1,4 +1,4 @@
-package com.CP03.ArrayProblems;
+package com.CP03.Sorting;
 
 import java.util.Arrays;
 
@@ -30,9 +30,32 @@ public class SelectionSort {
         return max;
     }
 
+    // using recursion
+
+    public static void Sort(int[] arr , int start, int last){
+        if (start >= last){
+            return ;
+        }
+        int max = start;
+        for (int i=start; i<= last; i++){
+            if (arr[i] > arr[max]){
+                max = i;
+            }
+        }
+        // swap
+
+        int temp = arr[max];
+        arr[max] = arr[last];
+        arr[last] = temp;
+
+        Sort(arr,start, last-1);
+    }
+
     public static void main(String[] args) {
-        int[] arr = {3,4,2,1};
-        Selection(arr);
+        int[] arr = {0,4,3,2,5,1};
+//        Selection(arr);
+        Sort(arr,0,arr.length-1);
+
         System.out.println(Arrays.toString(arr));
     }
 }

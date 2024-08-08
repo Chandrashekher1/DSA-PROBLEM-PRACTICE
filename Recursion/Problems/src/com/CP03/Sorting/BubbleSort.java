@@ -1,4 +1,4 @@
-package com.CP03.ArrayProblems;
+package com.CP03.Sorting;
 
 import java.util.*;
 

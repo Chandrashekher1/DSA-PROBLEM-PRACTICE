@@ -1,21 +1,20 @@
 package com.CP03.EasyProblem;
 
 public class ReverseOfNumber {
-    public static void main(String[] args) {
-        int ans = 1234;
-        reverse(ans);
-        System.out.println(sum);
-    }
-
     static int sum = 0;
-    public static void reverse(int num){
+    public static int Reverse(int num){
         if (num == 0){
-            return;
-        }
+            return 0;
 
+        }
         int rem = num % 10;
         sum = sum * 10 + rem;
-        reverse(num/10);
+        Reverse(num /10);
+        return sum;
+    }
 
+
+    public static void main(String[] args) {
+        System.out.println(Reverse(123));
     }
 }

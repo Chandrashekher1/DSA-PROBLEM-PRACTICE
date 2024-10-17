@@ -88,6 +88,24 @@ public class LinkedList {
         }
         temp.next = null;
     }
+    public void deleteAtPosition(int index){
+       if (head == null){
+           System.out.println("LL is Empty");
+       }
+
+       Node temp = head;
+       for (int i=0; i<index-1; i++){
+           temp = temp.next;
+       }
+        // If index is out of bounds
+        if (temp == null || temp.next == null) {
+            System.out.println("Index out of bounds");
+            return;
+        }
+
+        temp.next = temp.next.next;
+
+    }
 
    public void display(){
         if (head == null){
@@ -116,9 +134,10 @@ public class LinkedList {
         LL.deleteFirst();
        System.out.println("After first delete");
        LL.display();
-       System.out.println("End delete");
+       System.out.println("End index");
 
-       LL.deleteLast();
+//       LL.deleteLast();
+       LL.deleteAtPosition(1);
        LL.display();
 
 
